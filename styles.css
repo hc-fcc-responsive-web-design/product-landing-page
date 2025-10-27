@@ -1,0 +1,779 @@
+/* GLOBAL */
+
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700&display=swap');
+:root {
+  /* Primary Colors */
+  --color-blue: rgba(0, 33, 142, 1);
+  --color-green: rgba(186, 199, 0, 1);
+  --color-orange: rgba(247, 159, 67, 1);
+  --color-pink: rgba(241, 157, 193, 1);
+  --color-purple: rgba(195, 159, 200, 1);
+  --color-red: rgba(255, 123, 114, 1);
+  --color-turquoise: rgba(98, 199, 186, 1);
+  --color-yellow: rgba(255, 229, 57, 1);
+  
+  /* Dark Colors */
+  --color-dark-blue: rgba(0, 22, 65, 1);
+  --color-dark-yellow: rgba(131, 107, 28, 1);
+  
+  /* Light Colors */
+  --color-transluscent-white: rgba(255, 255, 255, 0.5);
+}
+
+/* Reset Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+body {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0;
+  padding: 0;
+  /* Typography */
+  font-size: 18px;
+  font-family: Arvo, Arial, sans-serif;
+  /* Other */
+}
+
+h1 {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0;
+  /* Typography */
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* Other */
+}
+
+h2 {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0;
+  /* Typography */
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* Other */
+}
+
+a {
+  /* Positioning */
+  /* Display and Box model */
+  /* Typography */
+  color: var(--color-yellow);
+  /* Other */
+}
+
+/* GRID & CONTAINER */
+
+#container {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-yellow);
+  box-sizing: border-box;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  grid-template-columns: 
+    [first] 1fr 
+    [third] minmax(auto, 960px) 
+    [fourth] 1fr;
+  grid-template-rows: 
+    [header] auto 
+    [main] 1fr 
+    [footer] auto;
+  width: 100%;
+  /* Typography */
+  /* Other */
+}
+
+#header {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  /* Display and Box model */
+  background: var(--color-dark-blue);
+  display: grid;
+  grid-area: header;
+  grid-template-areas:
+    ". logo nav .";
+  grid-template-columns: 
+    [first] 1fr 
+    [logo] auto 
+    [nav] minmax(auto, 806px) 
+    [fourth] 1fr;
+  grid-template-rows: 
+    [first] 1fr;
+  justify-items: center;
+  padding: 20px;
+  /* Typography */
+  /* Other */
+}
+
+#main {
+  /* Positioning */
+  /* Display and Box model */
+  display: grid;
+  grid-area: main;
+  grid-template-areas:
+    "hero"
+    "ingredients"
+    "praise"
+    "menu";
+  grid-template-columns: 
+    [first] 1fr;
+  grid-template-rows: 
+    [hero] auto
+    [ingredients] auto
+    [about] auto 
+    [menu] auto;
+  /* Typography */
+  color: var(--color-dark-blue);
+  /* Other */
+}
+
+#footer {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  background: var(--color-dark-yellow);
+  display: grid;
+  grid-area: footer;
+  grid-template-areas:
+    ". links .";
+  grid-template-columns: 
+    [first] 1fr 
+    [links] minmax(auto, 960px)
+    [fourth] 1fr;
+  grid-template-rows: 
+    [first] auto;
+  margin-top: 100px;
+  padding: 20px;
+  /* Typography */
+  /* Other */
+}
+
+.item {
+  /* Positioning */
+  /* Display and Box model */
+  box-sizing: border-box;
+  width: 100%;
+  /* Typography */
+  /* Other */
+}
+
+/* HEADER */
+
+/* --Logo-- */
+
+#logo {
+  /* Positioning */
+  /* Display and Box model */
+  grid-area: logo;
+  width: auto;
+  /* Typography */
+  /* Other */
+}
+
+#header-img {
+  height: 50px;
+}
+
+/* --Nav Bar-- */
+
+#nav-bar {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  grid-area: nav;
+  justify-self: end;
+  justify-content: space-between;
+  width: 400px;
+  /* Typography */
+  /* Other */
+}
+
+.nav-link {
+  /* Positioning */
+  /* Display and Box model */
+  padding: 0px 10px;
+  /* Typography */
+  color: var(--color-yellow);
+  font-size: 1.5rem;
+  text-decoration: none;
+  /* Other */
+}
+
+.nav-link:hover {
+  /* Positioning */
+  /* Display and Box model */
+  /* Typography */
+  color: white;
+  /* Other */
+  cursor: pointer;
+}
+
+.nav-link:first-child {
+  /* Positioning */
+  /* Display and Box model */
+  padding-left: 0px;
+  /* Typography */
+  /* Other */
+}
+
+.nav-link:last-child {
+    /* Positioning */
+  /* Display and Box model */
+  padding-right: 0px;
+  /* Typography */
+  /* Other */
+}
+
+/* MAIN */
+
+/* --Shared Styles-- */
+
+.section {
+  /* Positioning */
+  /* Display and Box model */
+  padding: 163px 0px 0px 0px;
+  /* Typography */
+  /* Other */
+}
+
+.section blockquote {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0; 
+  /* Typography */
+  text-align: center;
+  /* Other */
+}
+
+.section blockquote h1 {
+  /* Positioning */
+  /* Display and Box model */
+  max-width: 500px;
+  /* Typography */
+  /* Other */
+}
+
+/* --Hero-- */
+
+#hero {
+  /* Positioning */
+  /* Display and Box model */
+  /* Typography */
+  /* Other */
+}
+
+#hero blockquote {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0; 
+  /* Typography */
+  /* Other */
+}
+
+#spam-can {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  /* Typography */
+  /* Other */
+}
+
+#spam-can img {
+  /* Positioning */
+  /* Display and Box model */
+  max-width: 600px;
+  /* Typography */
+  /* Other */
+}
+
+.glow {
+  /* Positioning */
+  /* Display and Box model */
+  background: radial-gradient(
+    white, 
+    var(--color-transluscent-white), 
+    var(--color-yellow),
+    var(--color-yellow)
+  );
+  /* Typography */
+  /* Other */
+}
+
+/* --Form-- */
+
+#form {
+  /* Positioning */
+  /* Display and Box model */
+  margin-top: 40px;
+  /* Typography */
+  /* Other */
+}
+
+.field {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  /* Typography */
+  /* Other */
+}
+
+.input {
+  /* Positioning */
+  /* Display and Box model */
+  height: 50px;
+  border-radius: 10px 0px 0px 10px;
+  border-top: 4px solid var(--color-dark-blue);
+  border-right: none;
+  border-bottom: 4px solid var(--color-dark-blue);
+  border-left: 4px solid var(--color-dark-blue);
+  box-sizing: border-box;
+  padding: 0 0 0 20px;
+  width: 100%;
+  /* Typography */
+  color: var(--color-dark-blue);
+  font-family: inherit;
+  font-size: 1em;
+  /* Other */
+}
+
+.button {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-dark-blue);
+  border: 4px solid var(--color-dark-blue);
+  border-radius: 0px 10px 10px 0px;
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0 20px;
+  width: auto;
+  /* Typography */
+  color: var(--color-yellow);
+  font-family: Arvo;
+  font-size: 1em;
+  /* Other */
+}
+
+.button:hover {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-blue);
+  /* Typography */
+  /* Other */
+  cursor: pointer;
+}
+
+/* --Ingredients-- */
+
+#ingredients {
+  /* Positioning */
+  /* Display and Box model */
+  display: grid;
+  grid-area: ingredients;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 20px;
+  /* Typography */
+  /* Other */
+}
+
+.card {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  background: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  /* Typography */
+  /* Other */
+}
+
+.card .image {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  width: 100%;
+  /* Typography */
+  /* Other */
+}
+
+.card .light-blue {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-light-blue);
+  /* Typography */
+  /* Other */
+}
+
+.card .green {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-green);
+  /* Typography */
+  /* Other */
+}
+
+.card .orange {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-orange);
+  /* Typography */
+  /* Other */
+}
+
+.card .pink {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-pink);
+  /* Typography */
+  /* Other */
+}
+
+.card .purple {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-purple);
+  /* Typography */
+  /* Other */
+}
+
+.card .red {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-red);
+  /* Typography */
+  /* Other */
+}
+
+.card .turquoise {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-turquoise);
+  /* Typography */
+  /* Other */
+}
+
+.card .image .icon {
+  /* Positioning */
+  /* Display and Box model */
+  width: 150px;
+  /* Typography */
+  /* Other */
+}
+
+.card .caption {
+  /* Positioning */
+  /* Display and Box model */
+  background: var(--color-dark-blue);
+  border-radius: 0 0 10px 10px;
+  flex-grow: 2;
+  padding: 20px;
+  /* Typography */
+  /* Other */
+}
+
+.card .title {
+  /* Positioning */
+  /* Display and Box model */
+  width: auto;
+  /* Typography */
+  color: var(--color-yellow);
+  line-height: 3.3rem;
+  text-align: center;
+  /* Other */
+}
+
+.card .description {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0;
+  /* Typography */
+  color: var(--color-transluscent-white);
+  line-height: 2rem;
+  text-align: center;
+  /* Other */
+}
+
+/* --Praise-- */
+
+#praise {
+  /* Positioning */
+  /* Display and Box model */
+  grid-area: praise;
+  /* Typography */
+  /* Other */
+}
+
+#praise blockquote {
+  /* Positioning */
+  /* Display and Box model */
+  margin-top: 40px;
+  /* Typography */
+  /* Other */
+}
+
+.video-container {
+  /* Positioning */
+  position: relative;
+  /* Display and Box model */
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  /* Typography */
+  /* Other */
+}
+
+#video {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Display and Box model */
+  width: 100%;
+  height: 100%;
+  /* Typography */
+  /* Other */
+}
+
+/* --Meals-- */
+
+#menu {
+  /* Positioning */
+  /* Display and Box model */
+  grid-area: menu;
+  /* Typography */
+  /* Other */
+}
+
+#menu ul {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: center;
+  background: var(--color-transluscent-white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 40px 40px 100px 40px;
+  /* Typography */
+  /* Other */
+}
+
+#menu ul li {
+  /* Positioning */
+  /* Display and Box model */
+  width: 700px;
+  /* Typography */
+  list-style-type: none;
+  /* Other */
+}
+
+#menu .title {
+  /* Positioning */
+  /* Display and Box model */
+  align-items: flex-end;
+  border-bottom: 3px dotted;
+  border-color: var(--color-dark-yellow);
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0 0 0;
+  padding: 0 0 0.3rem 0;
+  width: auto;
+  /* Typography */
+  color: var(--color-dark-blue);
+  text-align: left;
+  /* Other */
+}
+
+#menu .description {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0;
+  /* Typography */
+  color: var(--color-dark-yellow);
+  text-align: left;
+  /* Other */
+}
+
+/* FOOTER */
+
+#links {
+  /* Positioning */
+  /* Display and Box model */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  grid-area: links;
+  /* Typography */
+  /* Other */
+}
+
+.footer-link {
+  /* Positioning */
+  /* Display and Box model */
+  /* Typography */  
+  color: var(--color-yellow);
+  font-size: 0.8em;
+  margin-right: 20px;
+  text-decoration: none;
+  /* Other */
+}
+
+.footer-link:hover {
+  /* Positioning */
+  /* Display and Box model */
+  /* Typography */  
+  color: white;
+  /* Other */
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 820px) {
+
+  /* MAIN */
+
+  #menu ul li {
+    /* Positioning */
+    /* Display and Box model */
+    width: 100%;
+    /* Typography */
+    /* Other */
+  }
+}
+
+@media (max-width: 700px) {
+  
+  /* HEADER */
+
+  #header {
+    /* Positioning */
+    /* Display and Box model */
+    grid-template-areas:
+      "logo"
+      "nav";
+    grid-template-columns: 
+      [first] 1fr;
+    grid-template-rows: 
+      [logo] 1fr 
+      [nav] auto;
+    /* Typography */
+    /* Other */
+  }
+
+  #nav-bar {
+    /* Positioning */
+    /* Display and Box model */
+    margin-top: 20px;
+    width: 100%;
+    /* Typography */
+    /* Other */
+  }
+
+  .nav-link {
+    /* Positioning */
+    /* Display and Box model */
+    /* Typography */
+    font-size: 1.2rem;
+    /* Other */
+  }
+
+  /* MAIN */
+
+  #spam-can img {
+    /* Positioning */
+    /* Display and Box model */
+    width: 100%;
+    /* Typography */
+    /* Other */
+  }
+
+  .input {
+    /* Positioning */
+    /* Display and Box model */
+    border-radius: 10px;
+    border: 4px solid var(--color-dark-blue);
+    padding: 0 20px;
+    /* Typography */
+    /* Other */
+  }
+
+  .button {
+    /* Positioning */
+    /* Display and Box model */
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    /* Typography */
+    /* Other */
+  }
+
+  .field {
+    /* Positioning */
+    /* Display and Box model */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* Typography */
+    /* Other */
+  }
+
+  #menu ul {
+    /* Positioning */
+    /* Display and Box model */
+    padding: 20px 20px 100px 20px;
+    /* Typography */
+    /* Other */
+  }
+
+  /* FOOTER */
+
+  #links {
+    /* Positioning */
+    /* Display and Box model */
+    flex-direction: column;
+    width: 100%;
+    /* Typography */
+    /* Other */
+  }
+
+  .footer-link {
+    /* Positioning */
+    /* Display and Box model */
+    /* Typography */  
+    margin-top: 10px;
+    /* Other */
+  }
+}
