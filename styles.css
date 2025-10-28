@@ -11,11 +11,11 @@
   --color-red: rgba(255, 123, 114, 1);
   --color-turquoise: rgba(98, 199, 186, 1);
   --color-yellow: rgba(255, 229, 57, 1);
-  
+
   /* Dark Colors */
   --color-dark-blue: rgba(0, 22, 65, 1);
   --color-dark-yellow: rgba(131, 107, 28, 1);
-  
+
   /* Light Colors */
   --color-transluscent-white: rgba(255, 255, 255, 0.5);
 }
@@ -84,13 +84,13 @@ a {
     "header header header"
     ". main ."
     "footer footer footer";
-  grid-template-columns: 
-    [first] 1fr 
-    [third] minmax(auto, 960px) 
+  grid-template-columns:
+    [first] 1fr
+    [third] minmax(auto, 960px)
     [fourth] 1fr;
-  grid-template-rows: 
-    [header] auto 
-    [main] 1fr 
+  grid-template-rows:
+    [header] auto
+    [main] 1fr
     [footer] auto;
   width: 100%;
   /* Typography */
@@ -109,12 +109,12 @@ a {
   grid-area: header;
   grid-template-areas:
     ". logo nav .";
-  grid-template-columns: 
-    [first] 1fr 
-    [logo] auto 
-    [nav] minmax(auto, 806px) 
+  grid-template-columns:
+    [first] 1fr
+    [logo] auto
+    [nav] minmax(auto, 806px)
     [fourth] 1fr;
-  grid-template-rows: 
+  grid-template-rows:
     [first] 1fr;
   justify-items: center;
   padding: 20px;
@@ -132,12 +132,12 @@ a {
     "ingredients"
     "praise"
     "menu";
-  grid-template-columns: 
+  grid-template-columns:
     [first] 1fr;
-  grid-template-rows: 
+  grid-template-rows:
     [hero] auto
     [ingredients] auto
-    [about] auto 
+    [about] auto
     [menu] auto;
   /* Typography */
   color: var(--color-dark-blue);
@@ -153,11 +153,11 @@ a {
   grid-area: footer;
   grid-template-areas:
     ". links .";
-  grid-template-columns: 
-    [first] 1fr 
+  grid-template-columns:
+    [first] 1fr
     [links] minmax(auto, 960px)
     [fourth] 1fr;
-  grid-template-rows: 
+  grid-template-rows:
     [first] auto;
   margin-top: 100px;
   padding: 20px;
@@ -261,7 +261,7 @@ a {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0; 
+  margin: 0;
   /* Typography */
   text-align: center;
   /* Other */
@@ -276,18 +276,10 @@ a {
 }
 
 /* --Hero-- */
-
-#hero {
-  /* Positioning */
-  /* Display and Box model */
-  /* Typography */
-  /* Other */
-}
-
 #hero blockquote {
   /* Positioning */
   /* Display and Box model */
-  margin: 0; 
+  margin: 0;
   /* Typography */
   /* Other */
 }
@@ -315,8 +307,8 @@ a {
   /* Positioning */
   /* Display and Box model */
   background: radial-gradient(
-    white, 
-    var(--color-transluscent-white), 
+    white,
+    var(--color-transluscent-white),
     var(--color-yellow),
     var(--color-yellow)
   );
@@ -561,6 +553,7 @@ a {
   top: 0;
   left: 0;
   /* Display and Box model */
+  border: 0;
   width: 100%;
   height: 100%;
   /* Typography */
@@ -577,7 +570,7 @@ a {
   /* Other */
 }
 
-#menu ul {
+#menu .wrapper {
   /* Positioning */
   /* Display and Box model */
   align-items: center;
@@ -591,7 +584,7 @@ a {
   /* Other */
 }
 
-#menu ul li {
+#menu .wrapper li {
   /* Positioning */
   /* Display and Box model */
   width: 700px;
@@ -627,6 +620,16 @@ a {
   /* Other */
 }
 
+#menu p {
+  /* Positioning */
+  /* Display and Box model */
+  margin: 0;
+  /* Typography */
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* Other */
+}
+
 /* FOOTER */
 
 #links {
@@ -643,7 +646,7 @@ a {
 .footer-link {
   /* Positioning */
   /* Display and Box model */
-  /* Typography */  
+  /* Typography */
   color: var(--color-yellow);
   font-size: 0.8em;
   margin-right: 20px;
@@ -654,7 +657,7 @@ a {
 .footer-link:hover {
   /* Positioning */
   /* Display and Box model */
-  /* Typography */  
+  /* Typography */
   color: white;
   /* Other */
 }
@@ -675,7 +678,7 @@ a {
 }
 
 @media (max-width: 700px) {
-  
+
   /* HEADER */
 
   #header {
@@ -684,10 +687,10 @@ a {
     grid-template-areas:
       "logo"
       "nav";
-    grid-template-columns: 
+    grid-template-columns:
       [first] 1fr;
-    grid-template-rows: 
-      [logo] 1fr 
+    grid-template-rows:
+      [logo] 1fr
       [nav] auto;
     /* Typography */
     /* Other */
@@ -772,7 +775,7 @@ a {
   .footer-link {
     /* Positioning */
     /* Display and Box model */
-    /* Typography */  
+    /* Typography */
     margin-top: 10px;
     /* Other */
   }
